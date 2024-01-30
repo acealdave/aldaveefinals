@@ -1,0 +1,23 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="addButton">
+        <button><a href="{% url 'home' %}" id="addSub">Back</a></button>
+    </div>
+
+     <h3 class="i-name">
+        Add Professor
+     </h3>
+<br>
+
+<div class="container">
+      <form action="" method="POST">
+          {% csrf_token %}
+          {{form}}
+
+         <button type="submit">Submit</button>
+      </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="addButton">
+        <button><a href="{% url 'addSub' %}" id="addSub">Add Subject</a></button>
+    </div>
+
+    <h3 class="i-name">
+        List of Subjects
+    </h3>
+
+    <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Subject Code</td>
+                         <td>Subject Name</td>
+                        <td>Units</td>
+                        <td>Type</td>
+                        <td>Action</td>
+
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        {% for sub in subject %}
+                        <td class="people-des">
+                            <h5>{{sub.subject_code}}</h5>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>{{sub.subject_name}}</h5>
+                        </td>
+
+                        <td class="role">
+                            <p>{{sub.units}}</p>
+                        </td>
+
+                         <td class="active">
+                            <p>{{sub.type}}</p>
+                        </td>
+
+                        <td class="role">
+                            <button class="edit"><a href="{% url 'editSub' sub.id %}" id="editBtn">Edit</a></button>
+                            <button class="delete"><a href="{% url 'deleteSubject' sub.id %}" id="deleteBtn">Delete</a></button>
+                        </td>
+                    </tr>
+               {% endfor %}
+
+               </tbody>
+           </table>
+       </div>
+
+{% endblock %}

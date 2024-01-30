@@ -1,0 +1,74 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+     <h3 class="i-name">
+        Instructor Evaluation
+     </h3>
+<br>
+
+<div class="container">
+      <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name">
+        <label>Student No.</label>
+        <input type="text" placeholder="Enter your student no.">
+        <label>Choose your Section</label>
+        <select>
+          <option>--select--</option>
+          <option>BSIT 1-1</option>
+          <option>BSIT 2-1</option>
+          <option>BSIT 3-1</option>
+          <option>BSIT 4-1</option>
+        </select>
+        <label>Choose Professor</label>
+        <select>
+          <option>--select--</option>
+          <option>Professor 1</option>
+          <option>Professor 2</option>
+          <option>Professor 3</option>
+          <option>Professor 4</option>
+        </select>
+        <label>Conducts Interactive Lesson</label>
+        <select>
+          <option>--select--</option>
+          <option>Very Poor</option>
+          <option>Poor</option>
+          <option>Good</option>
+          <option>Very Good</option>
+        </select>
+        <label>Knowledgeable on Topics</label>
+        <select>
+          <option>--select--</option>
+          <option>Very Poor</option>
+          <option>Poor</option>
+          <option>Good</option>
+          <option>Very Good</option>
+        </select>
+        <label>Considerate on Students Welfare</label>
+        <select>
+          <option>--select--</option>
+          <option>Very Poor</option>
+          <option>Poor</option>
+          <option>Good</option>
+          <option>Very Good</option>
+        </select>
+        <label>Rate Your Professor</label>
+        <select>
+          <option>--select--</option>
+          <option>Very Poor</option>
+          <option>Poor</option>
+          <option>Good</option>
+          <option>Very Good</option>
+        </select>
+
+         <button type="submit">Submit</button>
+      </form>
+</div>
+
+
+
+
+
+{% endblock %}
+

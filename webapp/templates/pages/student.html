@@ -1,0 +1,72 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="addButton">
+        <button><a href="{% url 'addStudent' %}" id="addSub">Add Student</a></button>
+    </div>
+
+    <h3 class="i-name">
+        List of Students
+    </h3>
+
+    <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Student Name</td>
+                         <td>Student No.</td>
+                        <td>Email</td>
+                        <td>Age</td>
+                        <td>Gender</td>
+                        <td>Program</td>
+                        <td>Subjects</td>
+                        <td>Action</td>
+
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        {% for stud in student %}
+                        <td class="people-des">
+                            <h5>{{stud.name}}</h5>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>{{stud.studNo}}</h5>
+                        </td>
+
+                        <td class="role">
+                            <p>{{stud.email}}</p>
+                        </td>
+
+                         <td class="active">
+                            <p>{{stud.age}}</p>
+                        </td>
+
+                         <td class="active">
+                            <p>{{stud.gender}}</p>
+                        </td>
+
+                         <td class="active">
+                            <p>{{stud.course}}</p>
+                        </td>
+
+                         <td class="active">
+                             {% for subject_instances in stud.subjects.all %}
+                            <p>{{subject_instances.subject_name}}</p>
+                             {% if not forloop.last %} / {% endif %}
+                             {% endfor %}
+                        </td>
+
+                        <td class="role">
+                            <button class="edit"><a href="{% url 'editStudent' stud.id %}" id="editBtn">Edit</a></button>
+                            <button class="delete"><a href="{% url 'deleteStudent' stud.id %}" id="deleteBtn">Delete</a></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+               </tbody>
+           </table>
+       </div>
+
+{% endblock %}

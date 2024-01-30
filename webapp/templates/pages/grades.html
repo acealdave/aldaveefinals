@@ -1,0 +1,57 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+     <div class="addButton">
+        <button><a href="{% url 'addGrade' %}" id="addSub">Add Grades</a></button>
+    </div>
+
+    <h3 class="i-name">
+        List of Grades
+    </h3>
+
+    <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Student</td>
+                        <td>Subject Name</td>
+                        <td>Grade</td>
+                        <td>Remark</td>
+                        <td>Action</td>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        {% for grades in grade %}
+                        <td class="people">
+                            <img src="{% static '/images/A.png' %}" alt="logo">
+                            <div class="people-de">
+                                <h5>{{ grades.student }}</h5>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>{{ grades.subject }}</h5>
+                        </td>
+
+                        <td class="role">
+                            <p>{{ grades.grade }}</p>
+                        </td>
+
+                        <td class="role">
+                            <p>{{ grades.remark }}</p>
+                        </td>
+
+                        <td class="role">
+                            <button class="edit"><a href="{% url 'editGrade' grades.id %}" id="editBtn">Edit</a></button>
+                            <button class="delete"><a href="{% url 'deleteGrade' grades.id %}" id="deleteBtn">Delete</a></button>
+                        </td>
+
+                    </tr>
+               {% endfor %}
+
+               </tbody>
+           </table>
+       </div>
+{% endblock %}

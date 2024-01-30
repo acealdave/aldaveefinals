@@ -1,0 +1,16 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<p class="message">Do you really want to delete this {{grade.grade}} grade on {{grade.subject}} for {{grade.student}}?</p>
+
+<div class="deleted">
+      <form action="" method="POST">
+          {% csrf_token %}
+          <button><a href="{% url 'grades' %}" id="cancel">Cancel</a></button>
+         <button type="submit" name="submit">Confirm</button>
+      </form>
+</div>
+
+{% endblock %}

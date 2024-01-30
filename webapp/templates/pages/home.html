@@ -1,0 +1,101 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+
+{% block content %}
+        <h3 class="i-name">
+            Dashboard
+        </h3>
+
+       <div class="values">
+           <div class="val-box">
+               <i class="icon-group"></i>
+               <div>
+                   <h3>{{total_student}}</h3>
+                   <span>Users</span>
+               </div>
+           </div>
+
+           <div class="val-box">
+               <i class="icon-group"></i>
+               <div>
+                   <h3>{{total_professor}}</h3>
+                   <span>I.T Professors</span>
+               </div>
+           </div>
+
+           <div class="val-box">
+               <i class="icon-book"></i>
+               <div>
+                   <h3>{{total_subject}}</h3>
+                   <span>Subjects</span>
+               </div>
+           </div>
+
+           <div class="val-box">
+               <i class="icon-dollar"></i>
+               <div>
+                   <h3>200</h3>
+                   <span>Society Fee</span>
+               </div>
+           </div>
+       </div>
+
+        <div class="addButton">
+            <button><a href="{% url 'addProfessor' %}" id="addSub">Add Professor</a></button>
+        </div>
+
+       <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Subject Handled</td>
+                        <td>Title</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        {% for home in professor %}
+                        <td class="people">
+                            <img src="{% static '/images/A.png' %}" alt="logo">
+                            <div class="people-des">
+                                <h5>{{home.name}}</h5>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            {% for subject_instances in home.subjects.all %}
+                            <h5>{{ subject_instances.subject_name }}</h5>
+                             {% endfor %}
+                        </td>
+
+                        <td class="role">
+                            <p>{{home.position}}</p>
+                        </td>
+
+                         <td class="active">
+                            <p>{{home.status}}</p>
+                        </td>
+
+                        <td class="edits">
+                            <button class="professor"><a href="{% url 'editProfessor' home.id %}" id="editBtn">Edit</a></button>
+                            <button class="professor"><a href="{% url 'deleteProfessor' home.id %}" id="deleteBtn">Delete</a></button>
+                        </td>
+                    </tr>
+               {% endfor %}
+
+
+               </tbody>
+           </table>
+       </div>
+   </section>
+
+
+{% endblock %}
+
+
+
+

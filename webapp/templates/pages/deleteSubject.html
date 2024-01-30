@@ -1,0 +1,16 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<p class="message">Do you really want to delete {{subject}}?</p>
+
+<div class="deleted">
+      <form action="" method="POST">
+          {% csrf_token %}
+          <button><a href="{% url 'subject' %}" id="cancel">Cancel</a></button>
+         <button type="submit" name="submit">Confirm</button>
+      </form>
+</div>
+
+{% endblock %}

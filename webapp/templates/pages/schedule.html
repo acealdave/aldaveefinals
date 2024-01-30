@@ -1,0 +1,60 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="addButton">
+        <button><a href="{% url 'addSchedule' %}" id="addSub">Add Schedule</a></button>
+    </div>
+
+    <h3 class="i-name">
+        List of Schedule
+    </h3>
+
+    <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Subject Name</td>
+                        <td>Date</td>
+                        <td>Start Time</td>
+                        <td>End Time</td>
+                        <td>Room No.</td>
+                        <td>Action</td>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        {% for sched in schedule %}
+                        <td class="people-des">
+
+                            <h5>{{ sched.subject }}</h5>
+
+                        </td>
+
+                        <td class="role">
+                            <p>{{ sched.schedule_day }}</h</p>
+                        </td>
+
+                        <td class="active">
+                            <p>{{ sched.schedule_time }}</p>
+                        </td>
+
+                        <td class="active">
+                            <p>{{ sched.schedule_end }}</p>
+                        </td>
+
+                        <td class="active">
+                            <p>{{ sched.room }}</p>
+                        </td>
+
+                        <td class="role">
+                            <button class="edit"><a href="{% url 'editSchedule' sched.id %}" id="editBtn">Edit</a></button>
+                            <button class="delete"><a href="{% url 'deleteSchedule' sched.id %}" id="deleteBtn">Delete</a></button>
+                        </td>
+                    </tr>
+               {% endfor %}
+
+               </tbody>
+           </table>
+       </div>
+{% endblock %}

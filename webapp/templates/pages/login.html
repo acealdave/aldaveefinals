@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITS Student Portal</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %} ">
+    <link rel="icon" type="images/x-icon" href="{% static '/images/ITS.png' %}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="login">
+    <form>
+        <h1>Login Form</h1>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control">
+        </div>
+         <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control">
+        </div>
+        <input type="submit" class="btn" value="Log in">
+    </form>
+</div>
+
+
+<footer>
+    <p>Student Portal. All righs reserved 2023 Aldave</p>
+</footer>
+<script src="{% static '/js/script.js' %}"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,135 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+    <h3 class="i-name">
+        Society Fee
+    </h3>
+
+    <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Officer in Charge</td>
+                        <td>Position</td>
+                        <td>Society Fee Amount</td>
+                        <td>Payment</td>
+
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        <td class="people">
+                            <img src="{% static '/images/user2.jpeg' %}" alt="logo">
+                            <div class="people-de">
+                                <h5>Stephen Bacolor</h5>
+                                <p>cvsu.its@gmail.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Treasuer</h5>
+
+                        </td>
+
+                        <td class="role">
+                            <p>Php. 100</p>
+                        </td>
+
+                        <td class="edit"><a href="#" id="fees" onclick="myFees()">Pay Here</a></td>
+
+
+                    </tr>
+
+
+               </tbody>
+           </table>
+       </div>
+
+     <h3 class="i-name">
+        Payment History
+    </h3>
+
+    <div class="board">
+           <table width="100%">
+               <thead>
+                    <tr>
+                        <td>Officer in Charge</td>
+                        <td>Position</td>
+                        <td>Society Fee Amount</td>
+                        <td>Semester</td>
+                        <td>Date</td>
+                        <td>Status</td>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        <td class="people">
+                            <img src="{% static '/images/user2.jpeg' %}" alt="logo">
+                            <div class="people-de">
+                                <h5>Stephen Bacolor</h5>
+                                <p>cvsu.its@gmail.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Treasuer</h5>
+                        </td>
+
+                        <td class="role">
+                            <p>Php. 100</p>
+                        </td>
+
+                        <td class="active">
+                            <p>1st Semester</p>
+                        </td>
+
+                         <td class="role">
+                            <p>September 15, 2023</p>
+                        </td>
+
+                         <td class="active">
+                            <p>Paid</p>
+                        </td>
+
+                    </tr>
+
+                <tr>
+                        <td class="people">
+                            <img src="{% static '/images/user2.jpeg' %}" alt="logo">
+                            <div class="people-de">
+                                <h5>Stephen Bacolor</h5>
+                                <p>cvsu.its@gmail.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Treasuer</h5>
+
+                        </td>
+
+                        <td class="role">
+                            <p>Php. 100</p>
+                        </td>
+
+                        <td class="active">
+                            <p>2nd Semester</p>
+                        </td>
+
+                        <td class="role">
+                            <p>February 15, 2024</p>
+                        </td>
+
+                         <td class="active">
+                            <p>Paid</p>
+                        </td>
+
+
+                    </tr>
+
+
+               </tbody>
+           </table>
+       </div>
+
+{% endblock %}
